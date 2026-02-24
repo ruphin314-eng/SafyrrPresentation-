@@ -116,7 +116,7 @@ const PrepaidCard: FC = () => {
           <div className="w-16 h-1 bg-linear-to-r from-yellow-400 to-yellow-200 rounded-full mx-auto mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { plan: "Classique", price: "2 500 FCFA", benefits: ["Chargez jusqu’à 500K FCFA", "Retraits aux distributeurs automatiques", "Paiements en ligne", "Support par email"] },
+              { plan: "Classique", price: "3 500 FCFA", benefits: ["Chargez jusqu’à 1.000.000 FCFA", "Retraits aux distributeurs automatiques", "Paiements en ligne", "Support par email"] },
               { plan: "Or", price: "5 000 FCFA", benefits: ["Chargez jusqu’à 2M FCFA", "Retraits gratuits aux distributeurs automatiques", "Online et sans contact", "Soutien prioritaire", "Récompenses en cashback"], popular: true },
               { plan: "Premium", price: "10 000 FCFA", benefits: ["Chargement illimité", "Distributeur automatique mondial gratuit", "Support VIP 24h/24 et 7j/7", "Cashback de la prime", "Assurance voyage"] },
             ].map((item) => (
@@ -151,7 +151,7 @@ const PrepaidCard: FC = () => {
             <div className="absolute inset-0 bg-linear-to-r from-gray-900/80 to-transparent flex items-center">
               <div className="p-8 md:p-12 max-w-lg">
                 <h2 className="text-3xl font-bold text-white mb-3">Prêt à recevoir ta carte ?</h2>
-                <p className="text-white/70 mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="text-white/70 mb-6">Get your Safyrr card. NOW.</p>
                 <a className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-yellow-400 to-yellow-200 text-gray-900 font-bold rounded-xl shadow-lg hover:opacity-90 transition" href="/contact">
                   Acheter maintenant
                 </a>

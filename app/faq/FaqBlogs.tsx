@@ -67,9 +67,9 @@ export default function FAQBlogs() {
       </section>
 
       {/* Section FAQ */}
-      <section className="py-20 bg-gray-50">
+      <section className="contains md:auto-center py-20 bg-gray-50">
         <div className="px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
             {/* Illustration & Contact */}
             <div className="lg:col-span-2 sticky top-24">
               <div className="relative">

@@ -64,16 +64,16 @@ const MoneyTransfert: React.FC = () => {
                 className="leading-relaxed mb-4"
                 style={{ color: "#6B7280" }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mais do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Safyrr révolutionne le transfert d’argent international en proposant une solution digitale,
+                instantanée et accessible via smartphone.
               </p>
 
               <p
                 className="leading-relaxed mb-6"
                 style={{ color: "#6B7280" }}
               >
-                Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore.
+                Nous offrons des commissions plus compétitives que les acteurs traditionnels, tout en garantissant rapidité, transparence et sécurité.
+               Notre objectif est de simplifier les transferts transfrontaliers pour les particuliers et entrepreneurs africains.
               </p>
 
               {/* STATS */}

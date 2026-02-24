@@ -27,13 +27,13 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold mb-6">Notre mission</h2>
             <div className="w-16 h-1 bg-yellow-400 rounded-full mb-6"></div>
             <p className="mb-4 text-gray-700">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mais do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Safyrr développe des solutions fintech combinant cartes virtuelles sécurisées et transferts internationaux
             </p>
             <p className="mb-4 text-gray-700">
-              Nisi ut déduira ex ea commodo conséquent. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+             afin de réduire les barrières financières en Afrique centrale
             </p>
             <p className="text-gray-700">
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+             tout en garantissant transparence, conformité et performance opérationnelle
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-4">

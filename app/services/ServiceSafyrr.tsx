@@ -66,8 +66,8 @@ const ServiceSafyrr = () => {
               </h2>
               <div className="w-12 h-1 rounded-full mb-5" style={{ background: 'linear-gradient(to right, #F5B547, #FFDF8F)' }} />
               <p className="text-gray-600 mb-6">
-                Découvrez notre gamme de cartes prépayées SAFYRR — parfaites pour les achats quotidiens, les paiements en ligne et les cadeaux. Aucun compte bancaire requis.
-              </p>
+                     Découvrez notre gamme de cartes prépayées SAFYRR — idéales pour vos achats quotidiens, paiements en ligne et cadeaux. Aucun compte bancaire requis.
+                    Avec SAFYRR, vous pouvez effectuer des transactions jusqu’à plus de 1 000 000 FCFA par mois, en toute simplicité et sécurité.              </p>
               <ul className="grid grid-cols-2 gap-2 mb-8 text-sm text-gray-800">
                 {[
                   'Émission instantanée',
