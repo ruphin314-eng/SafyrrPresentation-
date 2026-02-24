@@ -80,20 +80,19 @@ export default function FAQBlogs() {
                   className="relative rounded-2xl shadow-lg w-full object-cover border-4 border-yellow-300/30"
                 />
               </div>
-              <div className="mt-8 bg-white rounded-2xl p-6 shadow">
-                <h3 className="font-semibold text-gray-900 mb-2">
-                  Vous avez encore des questions ?
-                </h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  Notre équipe de support est disponible 24h/24 et 7j/7 pour
-                  vous aider.
-                </p>
-                <a
-                  href="/contact"
-                  className="block text-center py-3 bg-linear-to-r from-yellow-300 to-yellow-400 text-gray-900 font-semibold rounded-xl shadow hover:opacity-90 transition-all"
-                >
-                  Contactez le support
-                </a>
+              <div className="mt-4 bg-white rounded-xl p-4 shadow max-w-md mx-auto">
+                     <h3 className="font-semibold text-gray-900 mb-1 text-base">
+                       Vous avez encore des questions ?
+                     </h3>
+                      <p className="text-sm text-gray-600 mb-2">
+                         Notre équipe de support est disponible 24h/24 et 7j/7 pour vous aider.
+                    </p>
+                 <a
+                    href="/contact"
+                    className="block text-center py-2 bg-linear-to-r from-yellow-300 to-yellow-400 text-gray-900 font-semibold rounded-lg shadow hover:opacity-90 transition-all text-sm"
+                   >
+                   Contactez le support
+                 </a>
               </div>
             </div>
 
