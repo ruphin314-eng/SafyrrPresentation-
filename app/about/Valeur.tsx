@@ -63,7 +63,7 @@ export default function Valeur() {
         <div className="text-5xl mb-4">🤝</div>
         <h3 className="text-xl font-bold text-gray-900 mb-3">Transparence</h3>
         <p className="text-gray-700 text-sm leading-relaxed">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
+          Chaque centime prélevé sur ton dû est à l’avance justifier
         </p>
       </div>
 
