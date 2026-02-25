@@ -62,11 +62,11 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <div className="mb-4">
               <Image
-                src="/Image/logo.png"
+                src="/Image/logo2.png"
                 alt="SAFYRR Logo"
                 width={140}
                 height={60}
-                className="object-contain"
+                className="object-contain rounded-2xl"
               />
             </div>
 

@@ -23,7 +23,7 @@ export default function GetStarted() {
           href="/services"
           className="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-yellow-400 to-yellow-300 text-gray-900 font-bold rounded-xl shadow-lg hover:opacity-90 transition-all text-lg"
         >
-          Commencez dès aujourd’hui
+          télécharger l’application
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"

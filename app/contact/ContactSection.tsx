@@ -45,7 +45,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 text-sm mb-1">Notre bureau</h4>
-                    <p className="text-sm text-gray-600">123 rue de la Liberté</p>
+                    <p className="text-sm text-gray-600">bonamoussadi</p>
                     <p className="text-sm text-gray-600">Douala, Cameroun</p>
                   </div>
                 </div>

@@ -20,7 +20,9 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-300 shadow-sm">
       <div className="flex justify-between items-center h-20 px-6">
         {/* Logo */}
+        <Link href="/">
         <img src="/Image/logo.png" alt="Logo SAFYRR" className="h-14 md:h-18 lg:h-20" />
+        </Link>
 
         {/* Desktop menu */}
         <nav className="hidden md:flex items-center gap-6">
