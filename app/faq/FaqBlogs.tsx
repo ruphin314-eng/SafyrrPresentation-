@@ -9,7 +9,7 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     question: "Qu’est-ce qu’une carte prépayée ?",
-    answer: "Une carte prépayée est… [Réponse ici…]",
+    answer: "Une carte prépayée est une carte de paiement que tu dois charger avec de l’argent avant de l’utiliser.",
   },
   {
     question: "Comment puis-je transférer de l’argent avec SAFYRR ?",
@@ -17,15 +17,15 @@ const faqData: FAQItem[] = [
   },
   {
     question: "Quels abonnements puis-je payer ?",
-    answer: "[Réponse ici…]",
+    answer: "Recharge son bouquet canal +, son électricité, etc.",
   },
   {
     question: "Comment puis-je recharger ma carte prépayée ?",
-    answer: "[Réponse ici…]",
+    answer: "1.Ouvre l’application (ex : Safyrr); 2.Clique sur “Recharger” ou “Ajouter de l’argent”;  3.Choisis MTN MoMo ou Orange Money; 4.Entre le montant; 5.Confirme la transaction sur ton téléphone",
   },
   {
     question: "Mon argent est-il en sécurité avec SAFYRR ?",
-    answer: "[Réponse ici…]",
+    answer: "Oui — ton argent est sécurisé chez Safyrr. Safyrr fonctionne avec une banque américaine réglementée et utilise des systèmes de sécurité bancaire modernes pour protéger ton argent et tes données",
   },
   {
     question: "Quels sont les frais de transfert ?",
@@ -33,11 +33,11 @@ const faqData: FAQItem[] = [
   },
   {
     question: "Combien de temps prend la vérification des comptes ?",
-    answer: "[Réponse ici…]",
+    answer: "juste 05min😌",
   },
   {
     question: "Puis-je utiliser ma carte SAFYRR à l’international ?",
-    answer: "[Réponse ici…]",
+    answer: "Oui, Safyrr est sous la tutelle d’une banque américaine. De ce fait, cette carte est reconnue dans le monde entier.",
   },
 ];
 
