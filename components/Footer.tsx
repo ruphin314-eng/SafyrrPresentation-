@@ -61,6 +61,7 @@ export default function Footer() {
           {/* Logo */}
           <div className="flex flex-col items-center md:items-start">
             <div className="mb-4">
+              <Link href="/">
               <Image
                 src="/Image/logo2.png"
                 alt="SAFYRR Logo"
@@ -68,6 +69,7 @@ export default function Footer() {
                 height={60}
                 className="object-contain rounded-2xl"
               />
+              </Link>
             </div>
 
             <p className="text-sm text-white/60 leading-relaxed max-w-xs text-center md:text-left">
