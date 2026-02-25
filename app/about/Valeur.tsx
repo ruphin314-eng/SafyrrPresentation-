@@ -17,12 +17,10 @@ export default function Valeur() {
       <div className="p-8 bg-[#f7f0e5] rounded-2xl hover:bg-[#f4e9ce] transition-all">
         <div className="text-center text-5xl mb-4">🔐</div>
         <h3 className="text-xl font-bold text-gray-900 mb-3">Sécurité</h3>
-        <p className="text-gray-700 text-sm leading-relaxed">
-          <ol>
-           <li>👉 Nous protégeons l’argent et les données de nos utilisateurs.</li>
-          <li>👉 Transparence totale sur les frais et les transactions.</li>
-          <li>👉 Zéro compromis sur la confiance.</li>
-          </ol>
+        <p className="text-gray-700 text-sm leading-relaxed">   
+           <p>👉 Nous protégeons l’argent et les données de nos utipsateurs.</p>
+          <p>👉 Transparence totale sur les frais et les transactions.</p>
+          <p>👉 Zéro compromis sur la confiance.</p>
         </p>
       </div>
 
@@ -43,7 +41,7 @@ export default function Valeur() {
         <h3 className="text-xl font-bold text-gray-900 mb-3">Proximité</h3>
         <p className="text-gray-700 text-sm leading-relaxed">
           On ne vend pas juste une carte. 
-          On accompagne nos clients à chaque étape de leur parcours financier.
+          On accompagne nos cpents à chaque étape de leur parcours financier.
         </p>
       </div>
 
