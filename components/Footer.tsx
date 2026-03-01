@@ -19,7 +19,7 @@ export default function Footer() {
       icon: <FaFacebookF size={18} />,
     },
     {
-      href: "https://instagram.com/safyrr",
+      href: "https://www.instagram.com/safyrr237?igsh=M2M2eTg5ajkxY2Rn&utm_source=qr",
       label: "Instagram",
       icon: <FaInstagram size={18} />,
     },
@@ -29,7 +29,7 @@ export default function Footer() {
       icon: <FaTwitter size={18} />,
     },
     {
-      href: "https://linkedin.com/company/safyrr",
+      href: "https://www.linkedin.com/in/leonel-isaac-kewang-87bb9336b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       label: "LinkedIn",
       icon: <FaLinkedinIn size={18} />,
     },
