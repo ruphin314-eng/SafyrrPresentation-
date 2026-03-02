@@ -78,9 +78,9 @@ export default function AboutPage() {
 
           <div className="max-w-3xl mx-auto space-y-8">
             {[
-              { year: "2019", title: "Fondation de l’entreprise", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam." },
-              { year: "2021", title: "Lancement des cartes prépayées", text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." },
-              { year: "2023", title: "Étendu à 15 pays", text: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim." },
+              { year: "2019", title: "la naissance de safyrr", text: "À 21 ans… j’ai traversé une période très sombre. Une dépression. Beaucoup de doutes. Beaucoup de questions.Je me demandais : Est-ce que je peux vraiment créer quelque chose qui compte ? Un jour, j’ai observé un problème simple…Autour de moi, au Cameroun 🇨🇲, beaucoup de jeunes voulaient payer Netflix, Amazon, faire du trading, lancer un business en ligne…Mais ils étaient bloqués. Pas de carte bancaire internationale. Des frais trop élevés. Un service client inexistant chez certains concurrents. Et je me suis posé une question : Pourquoi quelqu’un d’ici devrait être limité ?" },
+              { year: "2021", title: "Pourquoi quelqu’un d’ici devrait être limité", text: "C’est là que l’idée de Safyrr est née. Pas juste une carte virtuelle. Mais un outil d’émancipation. Un système qui permet : •	D’acheter en ligne en toute sécurité; •	De transférer de l’argent instantanément; •	D’accéder au dollar facilement; •	Et surtout… d’avoir un service client proche, humain, réactif Je n’avais pas tout. Pas de gros investisseurs. Pas de millions." },
+              { year: "2023", title: "j'avais une vision", text: "💡 Donner aux jeunes africains les mêmes opportunités financières que partout ailleurs dans le monde. Aujourd’hui, Safyrr n’est pas juste une fintech. C’est la preuve que même dans le doute… Même après une chute… On peut créer quelque chose de solide" },
               { year: "2025", title: "50 000 clients satisfaits", text: "Mais ut persévéré où omnis iste natus error sit accusateur voluptatem doloremque laudantium." },
             ].map((item, idx) => (
               <div key={idx} className="flex gap-6 items-start">
