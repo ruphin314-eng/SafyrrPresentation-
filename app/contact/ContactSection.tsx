@@ -58,7 +58,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-semibold text-gray-900 text-sm mb-1">Téléphone</h4>
                     <p className="text-sm text-gray-600"><a href="https://wa.me/237688704382" target="_blank" className="hover:underline">
-                     +237 000 000 000</a></p>
+                     +237 688 70 43 82</a></p>
                     <p className="text-sm text-gray-600">+237 111 111 111</p>
                   </div>
                 </div>

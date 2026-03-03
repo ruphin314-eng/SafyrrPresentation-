@@ -34,7 +34,7 @@ export default function Footer() {
       icon: <FaLinkedinIn size={18} />,
     },
     {
-      href: "https://wa.me/237000000000",
+      href: "https://wa.me/237688704382",
       label: "WhatsApp",
       icon: <FaWhatsapp size={18} />,
     },
@@ -128,7 +128,7 @@ export default function Footer() {
               </p>
 
               <p>📞 <a href="https://wa.me/237688704382" target="_blank" className="hover:underline">
-                     +237 000 000 000
+                     +237 688 70 43 82
                      </a>
               </p>
               <p>📍 Douala, Cameroun</p>
