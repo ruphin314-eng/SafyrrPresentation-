@@ -8,7 +8,7 @@ export async function POST(req: Request) {
 
   try {
     const { error } = await resend.emails.send({
-      from: 'SAFYRR Contact <contact@safyrr.com>', // 👈 gardez ça pour les tests
+      from: 'SAFYRR Contact <contact@safyrr.tech>', // 👈 gardez ça pour les tests
       to: process.env.EMAIL_TO!,
       replyTo: email,
       subject: `[SAFYRR Contact] ${subject || 'Nouveau message'}`,
