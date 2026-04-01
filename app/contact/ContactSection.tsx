@@ -1,7 +1,50 @@
 /* eslint-disable @next/next/no-img-element */
+'use client';
+
+import { useState } from 'react';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
 
+type Status = 'idle' | 'sending' | 'success' | 'error';
+
 export default function ContactSection() {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [status, setStatus] = useState<Status>('idle');
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus('success');
+        setForm({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -14,7 +57,8 @@ export default function ContactSection() {
             Contactez-nous
           </h1>
           <p className="text-gray-600 max-w-xl mx-auto text-lg">
-            Nous serions ravis d’avoir de vos nouvelles. Envoyez-nous un message et nous répondrons dès que possible.
+            Nous serions ravis d'avoir de vos nouvelles. Envoyez-nous un message
+            et nous répondrons dès que possible.
           </p>
         </div>
       </section>
@@ -23,7 +67,7 @@ export default function ContactSection() {
       <section className="py-20 bg-white">
         <div className="px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
+
             {/* Left Column */}
             <div>
               <div className="relative mb-8">
@@ -38,7 +82,6 @@ export default function ContactSection() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Contactez-nous</h2>
 
               <div className="space-y-5">
-                {/* Adresse */}
                 <div className="flex gap-4 p-4 bg-[#fdf6ea] rounded-xl hover:bg-[#feeec4e5] transition">
                   <div className="w-10 h-10 bg-[#FFDF8F] rounded-lg flex items-center justify-center">
                     <FaMapMarkerAlt className="text-[#F5B547]" />
@@ -50,37 +93,43 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                {/* Téléphone */}
                 <div className="flex gap-4 p-4 bg-[#fdf6ea] rounded-xl hover:bg-[#feeec4e5] transition">
                   <div className="w-10 h-10 bg-[#FFDF8F] rounded-lg flex items-center justify-center">
                     <FaPhoneAlt className="text-[#F5B547]" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 text-sm mb-1">Téléphone</h4>
-                    <p className="text-sm text-gray-600"><a href="https://wa.me/237688704382" target="_blank" className="hover:underline">
-                     +237 688 70 43 82</a></p>
+                    <p className="text-sm text-gray-600">
+                      <a href="https://wa.me/237688704382" target="_blank" className="hover:underline">
+                        +237 688 70 43 82
+                      </a>
+                    </p>
                     <p className="text-sm text-gray-600">+237 111 111 111</p>
                   </div>
                 </div>
 
-                {/* Email */}
                 <div className="flex gap-4 p-4 bg-[#fdf6ea] rounded-xl hover:bg-[#feeec4e5] transition">
                   <div className="w-10 h-10 bg-[#FFDF8F] rounded-lg flex items-center justify-center">
                     <FaEnvelope className="text-[#F5B547]" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 text-sm mb-1">Email</h4>
-                    <p className="text-sm text-gray-600"><a href="mailto:Lionelkewang087@safyrr.org" className="hover:underline">
-                     contact@safyrr.com
-                     </a></p>
-                    <p className="text-sm text-gray-600">support@safyrr.com</p>
+                    <p className="text-sm text-gray-600">
+                      <a href="mailto:contact@safyrr.com" className="hover:underline">
+                        contact@safyrr.com
+                      </a>
+                    </p>
+                   <p className="text-sm text-gray-600">
+                      <a href="mailto:Lionelkewang087@safyrr.org" className="hover:underline">
+                        support@safyrr.com
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* Horaires */}
               <div className="mt-6 p-4 bg-[#feeec4e5]/20 border border-yellow-300 rounded-xl">
-                <p className="text-sm font-semibold text-gray-900 mb-1">Horaires d’ouverture</p>
+                <p className="text-sm font-semibold text-gray-900 mb-1">Horaires d'ouverture</p>
                 <p className="text-sm text-gray-600">Lundi – vendredi : 8h00 – 18h00</p>
                 <p className="text-sm text-gray-600">Samedi : 9h00 – 15h00</p>
                 <p className="text-sm text-gray-600">Dimanche : Fermé</p>
@@ -89,8 +138,11 @@ export default function ContactSection() {
 
             {/* Right Column - Form */}
             <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Envoie-nous un message</h2>
-              <form className="space-y-5">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                Envoie-nous un message
+              </h2>
+
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-900 mb-1.5">
@@ -98,6 +150,9 @@ export default function ContactSection() {
                     </label>
                     <input
                       type="text"
+                      name="name"
+                      value={form.name}
+                      onChange={handleChange}
                       required
                       placeholder="Votre nom complet"
                       className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#FFDF8F] focus:border-yellow-400 transition placeholder-gray-400"
@@ -109,6 +164,9 @@ export default function ContactSection() {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
                       required
                       placeholder="your@email.com"
                       className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#FFDF8F] focus:border-yellow-400 transition placeholder-gray-400"
@@ -117,9 +175,14 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-900 mb-1.5">Sujet</label>
+                  <label className="block text-sm font-medium text-gray-900 mb-1.5">
+                    Sujet
+                  </label>
                   <input
                     type="text"
+                    name="subject"
+                    value={form.subject}
+                    onChange={handleChange}
                     placeholder="Comment pouvons-nous vous aider ?"
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#FFDF8F] focus:border-yellow-400 transition placeholder-gray-400"
                   />
@@ -130,6 +193,9 @@ export default function ContactSection() {
                     Message <span className="text-red-500">*</span>
                   </label>
                   <textarea
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
                     rows={6}
                     required
                     placeholder="Parlez-nous davantage de votre enquête..."
@@ -137,12 +203,25 @@ export default function ContactSection() {
                   />
                 </div>
 
+                {/* Status messages */}
+                {status === 'success' && (
+                  <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm font-medium">
+                    ✅ Message envoyé avec succès ! Nous vous répondrons bientôt.
+                  </div>
+                )}
+                {status === 'error' && (
+                  <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm font-medium">
+                    ❌ Une erreur est survenue. Veuillez réessayer ou nous contacter directement.
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 py-3.5 bg-linear-to-r from-yellow-300 to-[#FFDF8F] text-gray-900 font-bold rounded-xl shadow hover:opacity-90 transition"
+                  disabled={status === 'sending'}
+                  className="w-full flex items-center justify-center gap-2 py-3.5 bg-linear-to-r from-yellow-300 to-[#FFDF8F] text-gray-900 font-bold rounded-xl shadow hover:opacity-90 transition disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <FaPaperPlane />
-                  Envoyer un message
+                  {status === 'sending' ? 'Envoi en cours...' : 'Envoyer un message'}
                 </button>
               </form>
             </div>
