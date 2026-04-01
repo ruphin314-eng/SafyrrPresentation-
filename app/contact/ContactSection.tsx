@@ -1,47 +1,54 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
 
+/* eslint-disable @next/next/no-img-element */
 import { useState } from 'react';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
 
-type Status = 'idle' | 'sending' | 'success' | 'error';
-
 export default function ContactSection() {
-  const [form, setForm] = useState({
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: '',
   });
-  const [status, setStatus] = useState<Status>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    setStatus('sending');
+
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatus('error');
+      setErrorMsg('Veuillez remplir tous les champs obligatoires.');
+      return;
+    }
+
+    setStatus('loading');
+    setErrorMsg('');
 
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify(formData),
       });
 
       const data = await res.json();
 
-      if (data.success) {
-        setStatus('success');
-        setForm({ name: '', email: '', subject: '', message: '' });
-      } else {
+      if (!res.ok) {
         setStatus('error');
+        setErrorMsg(data.error || "Une erreur s'est produite.");
+      } else {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
       }
     } catch {
       setStatus('error');
+      setErrorMsg('Impossible de contacter le serveur. Réessayez plus tard.');
     }
   };
 
@@ -57,8 +64,7 @@ export default function ContactSection() {
             Contactez-nous
           </h1>
           <p className="text-gray-600 max-w-xl mx-auto text-lg">
-            Nous serions ravis d'avoir de vos nouvelles. Envoyez-nous un message
-            et nous répondrons dès que possible.
+            Nous serions ravis d'avoir de vos nouvelles. Envoyez-nous un message et nous répondrons dès que possible.
           </p>
         </div>
       </section>
@@ -82,6 +88,7 @@ export default function ContactSection() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Contactez-nous</h2>
 
               <div className="space-y-5">
+                {/* Adresse */}
                 <div className="flex gap-4 p-4 bg-[#fdf6ea] rounded-xl hover:bg-[#feeec4e5] transition">
                   <div className="w-10 h-10 bg-[#FFDF8F] rounded-lg flex items-center justify-center">
                     <FaMapMarkerAlt className="text-[#F5B547]" />
@@ -93,6 +100,7 @@ export default function ContactSection() {
                   </div>
                 </div>
 
+                {/* Téléphone */}
                 <div className="flex gap-4 p-4 bg-[#fdf6ea] rounded-xl hover:bg-[#feeec4e5] transition">
                   <div className="w-10 h-10 bg-[#FFDF8F] rounded-lg flex items-center justify-center">
                     <FaPhoneAlt className="text-[#F5B547]" />
@@ -108,6 +116,7 @@ export default function ContactSection() {
                   </div>
                 </div>
 
+                {/* Email */}
                 <div className="flex gap-4 p-4 bg-[#fdf6ea] rounded-xl hover:bg-[#feeec4e5] transition">
                   <div className="w-10 h-10 bg-[#FFDF8F] rounded-lg flex items-center justify-center">
                     <FaEnvelope className="text-[#F5B547]" />
@@ -115,19 +124,16 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-semibold text-gray-900 text-sm mb-1">Email</h4>
                     <p className="text-sm text-gray-600">
-                      <a href="mailto:contact@safyrr.tech" className="hover:underline">
-                        contact@safyrr.com
-                      </a>
+                      <a href="mailto:contact@safyrr.tech" className="hover:underline">contact@safyrr.com</a>
                     </p>
-                   <p className="text-sm text-gray-600">
-                      <a href="mailto:Lionelkewang087@safyrr.org" className="hover:underline">
-                        support@safyrr.com
-                      </a>
+                    <p className="text-sm text-gray-600">
+                      <a href="mailto:support@safyrr.com" className="hover:underline">support@safyrr.com</a>
                     </p>
                   </div>
                 </div>
               </div>
 
+              {/* Horaires */}
               <div className="mt-6 p-4 bg-[#feeec4e5]/20 border border-yellow-300 rounded-xl">
                 <p className="text-sm font-semibold text-gray-900 mb-1">Horaires d'ouverture</p>
                 <p className="text-sm text-gray-600">Lundi – vendredi : 8h00 – 18h00</p>
@@ -138,11 +144,31 @@ export default function ContactSection() {
 
             {/* Right Column - Form */}
             <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Envoie-nous un message
-              </h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Envoie-nous un message</h2>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
+              {/* Message succès */}
+              {status === 'success' && (
+                <div className="mb-5 flex items-start gap-3 p-4 bg-green-50 border border-green-300 rounded-xl text-green-800 text-sm">
+                  <span className="text-lg">✅</span>
+                  <div>
+                    <p className="font-semibold">Message envoyé avec succès !</p>
+                    <p>Nous vous répondrons dans les plus brefs délais. Un email de confirmation vous a été envoyé.</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Message erreur */}
+              {status === 'error' && (
+                <div className="mb-5 flex items-start gap-3 p-4 bg-red-50 border border-red-300 rounded-xl text-red-800 text-sm">
+                  <span className="text-lg">❌</span>
+                  <div>
+                    <p className="font-semibold">Erreur</p>
+                    <p>{errorMsg}</p>
+                  </div>
+                </div>
+              )}
+
+              <div className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-900 mb-1.5">
@@ -151,9 +177,9 @@ export default function ContactSection() {
                     <input
                       type="text"
                       name="name"
-                      value={form.name}
-                      onChange={handleChange}
                       required
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder="Votre nom complet"
                       className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#FFDF8F] focus:border-yellow-400 transition placeholder-gray-400"
                     />
@@ -165,9 +191,9 @@ export default function ContactSection() {
                     <input
                       type="email"
                       name="email"
-                      value={form.email}
-                      onChange={handleChange}
                       required
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="your@email.com"
                       className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#FFDF8F] focus:border-yellow-400 transition placeholder-gray-400"
                     />
@@ -175,13 +201,11 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-900 mb-1.5">
-                    Sujet
-                  </label>
+                  <label className="block text-sm font-medium text-gray-900 mb-1.5">Sujet</label>
                   <input
                     type="text"
                     name="subject"
-                    value={form.subject}
+                    value={formData.subject}
                     onChange={handleChange}
                     placeholder="Comment pouvons-nous vous aider ?"
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#FFDF8F] focus:border-yellow-400 transition placeholder-gray-400"
@@ -193,37 +217,37 @@ export default function ContactSection() {
                     Message <span className="text-red-500">*</span>
                   </label>
                   <textarea
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
                     rows={6}
+                    name="message"
                     required
+                    value={formData.message}
+                    onChange={handleChange}
                     placeholder="Parlez-nous davantage de votre enquête..."
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#FFDF8F] focus:border-yellow-400 transition placeholder-gray-400 resize-none"
                   />
                 </div>
 
-                {/* Status messages */}
-                {status === 'success' && (
-                  <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm font-medium">
-                    ✅ Message envoyé avec succès ! Nous vous répondrons bientôt.
-                  </div>
-                )}
-                {status === 'error' && (
-                  <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm font-medium">
-                    ❌ Une erreur est survenue. Veuillez réessayer ou nous contacter directement.
-                  </div>
-                )}
-
                 <button
-                  type="submit"
-                  disabled={status === 'sending'}
+                  onClick={handleSubmit}
+                  disabled={status === 'loading'}
                   className="w-full flex items-center justify-center gap-2 py-3.5 bg-linear-to-r from-yellow-300 to-[#FFDF8F] text-gray-900 font-bold rounded-xl shadow hover:opacity-90 transition disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <FaPaperPlane />
-                  {status === 'sending' ? 'Envoi en cours...' : 'Envoyer un message'}
+                  {status === 'loading' ? (
+                    <>
+                      <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                      </svg>
+                      Envoi en cours...
+                    </>
+                  ) : (
+                    <>
+                      <FaPaperPlane />
+                      Envoyer un message
+                    </>
+                  )}
                 </button>
-              </form>
+              </div>
             </div>
 
           </div>
