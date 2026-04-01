@@ -1,8 +1,33 @@
 // pages/get-started.js
-import React from "react";
-import Link from "next/link";
+import React, { useEffect, useState } from "react";
+
+// 🔧 Tes liens
+const LINKS = {
+  playstore: "https://play.google.com/store/apps/details?id=ton.app",
+  webApp: "https://ton-site-web.com",
+};
 
 export default function GetStarted() {
+  const [label, setLabel] = useState("Télécharger l'application");
+
+  useEffect(() => {
+    const ua = navigator.userAgent.toLowerCase();
+    if (ua.includes("android")) {
+      setLabel("Télécharger sur Play Store");
+    } else {
+      setLabel("Ouvrir l'application web");
+    }
+  }, []);
+
+  const handleDownload = () => {
+    const ua = navigator.userAgent.toLowerCase();
+    if (ua.includes("android")) {
+      window.location.href = LINKS.playstore;
+    } else {
+      window.location.href = LINKS.webApp;
+    }
+  };
+
   return (
     <section className="py-20 bg-[#333333] relative overflow-hidden">
       {/* Background gold blurs */}
@@ -17,13 +42,13 @@ export default function GetStarted() {
           Prêt à commencer ?
         </h2>
         <p className="text-white/60 max-w-md mx-auto mb-8">
-          Rejoignez des milliers de clients satisfaits et découvrez l’avenir des services financiers.
+          Rejoignez des milliers de clients satisfaits et découvrez l'avenir des services financiers.
         </p>
-        <Link
-          href="/services"
-          className="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-yellow-400 to-yellow-300 text-gray-900 font-bold rounded-xl shadow-lg hover:opacity-90 transition-all text-lg"
+        <button
+          onClick={handleDownload}
+          className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900 font-bold rounded-xl shadow-lg hover:opacity-90 transition-all text-lg"
         >
-          télécharger l’application
+          {label}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -39,7 +64,7 @@ export default function GetStarted() {
             <path d="M5 12h14"></path>
             <path d="m12 5 7 7-7 7"></path>
           </svg>
-        </Link>
+        </button>
       </div>
     </section>
   );
