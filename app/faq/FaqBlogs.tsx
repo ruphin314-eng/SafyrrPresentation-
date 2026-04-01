@@ -13,7 +13,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "Comment puis-je transférer de l’argent avec SAFYRR ?",
-    answer: "[Réponse ici…]",
+    answer: "Il faut avoir le nom de la personne taper juste dans la barre de recherche cliquer sur son nom;  Ensuite entrée le montant",
   },
   {
     question: "Quels abonnements puis-je payer ?",
@@ -29,7 +29,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "Quels sont les frais de transfert ?",
-    answer: "[Réponse ici…]",
+    answer: "4,5% du montant transféré",
   },
   {
     question: "Combien de temps prend la vérification des comptes ?",
