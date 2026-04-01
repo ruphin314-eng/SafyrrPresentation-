@@ -1,10 +1,10 @@
-// pages/get-started.js
+"use client";
 import React, { useEffect, useState } from "react";
 
 // 🔧 Tes liens
 const LINKS = {
-  playstore: "https://play.google.com/store/apps/details?id=ton.app",
-  webApp: "https://ton-site-web.com",
+  playstore: "https://play.google.com/store/apps/details?id=com.safyr.safyr",
+  webApp: "https://safyrr.tech/",
 };
 
 export default function GetStarted() {
