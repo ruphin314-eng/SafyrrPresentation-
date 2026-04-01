@@ -1,24 +1,16 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   const { name, email, subject, message } = await req.json();
 
-  const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,       // mail.hostinger.com
-    port: Number(process.env.EMAIL_PORT), // 465
-    secure: true,                        // true pour le port 465
-    auth: {
-      user: process.env.EMAIL_USER,     // contact@safyrr.com
-      pass: process.env.EMAIL_PASS,     // mot de passe Hostinger
-    },
-  });
-
   try {
-    await transporter.sendMail({
-      from: `"SAFYRR Contact" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO,
-      replyTo: email,                   // répondre directement au client
+    const { error } = await resend.emails.send({
+      from: 'SAFYRR Contact <contact@safyrr.com>', // 👈 gardez ça pour les tests
+      to: process.env.EMAIL_TO!,
+      replyTo: email,
       subject: `[SAFYRR Contact] ${subject || 'Nouveau message'}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -42,9 +34,17 @@ export async function POST(req: Request) {
       `,
     });
 
+    if (error) {
+      console.error('❌ Erreur Resend:', error);
+      return NextResponse.json({ success: false, error }, { status: 500 });
+    }
+
+    console.log('✅ Email envoyé avec succès');
     return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error('Erreur envoi email:', error);
-    return NextResponse.json({ success: false }, { status: 500 });
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (error: any) {
+    console.error('❌ Erreur:', error.message);
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }
