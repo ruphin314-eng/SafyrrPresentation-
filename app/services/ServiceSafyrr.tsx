@@ -104,7 +104,7 @@ const ServiceSafyrr = () => {
   {/* Texte à gauche */}
   <div>
     <h2 className="text-3xl font-bold mb-4" style={{ color: '#333' }}>
-      Transferts d’argent
+      Transferts d’argent international
     </h2>
     <div
       className="w-12 h-1 rounded-full mb-5"
@@ -188,14 +188,15 @@ const ServiceSafyrr = () => {
 
             <div>
               <h2 className="text-3xl font-bold mb-4" style={{ color: '#333' }}>
-                Services d’abonnement
+                Services safyrr djangui
               </h2>
               <div className="w-12 h-1 rounded-full mb-5" style={{ background: 'linear-gradient(to right, #F5B547, #FFDF8F)' }} />
               <p className="text-gray-600 mb-6">
-                Gérez facilement vos abonnements Canal Plus, Eneo et autres abonnements essentiels. Payez une fois et profitez d’un service ininterrompu.
+                Gérez facilement vos cotisations de tontine avec Safyrr Djangui.
+                Participez, cotisez et recevez votre tour en toute sécurité, sans stress.
               </p>
               <ul className="grid grid-cols-2 gap-2 mb-8 text-sm text-gray-800">
-                {['Canal Plus', 'Facturation Eneo', 'Renouvellement facile', 'Tout au même endroit'].map((item) => (
+                {['Tontines sécurisées', 'Gestion des cotisations', 'Suivi des tours en temps réel', 'Paiements simples et rapides', 'Accès sécurisé 24/7', 'Tout au même endroit'].map((item) => (
                   <li key={item} className="flex items-center gap-2">
                     <span
                       className="w-5 h-5 flex items-center justify-center rounded-full font-bold shrink-0"
@@ -215,7 +216,7 @@ const ServiceSafyrr = () => {
                   color: '#333',
                 }}
               >
-                Découvrez les services d’abonnement <FaArrowRight />
+                Découvrez le service safyrr djangui <FaArrowRight />
               </Link>
             </div>
           </div>

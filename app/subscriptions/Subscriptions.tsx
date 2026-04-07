@@ -41,22 +41,21 @@ export default function Subscriptions() {
               color: "#F5B547",
             }}
           >
-            Abonnements
+            djangui
           </span>
 
           <h1
             className="text-4xl md:text-5xl font-extrabold mb-4"
             style={{ color: "#FBF6EF" }}
           >
-            Services d’abonnement
+            Services Safyrr djangui
           </h1>
 
           <p
             className="max-w-xl mx-auto text-lg"
             style={{ color: "rgba(251,246,239,0.7)" }}
           >
-            Payez tous vos abonnements au même endroit — Canal Plus, Eneo, et
-            bien d’autres.
+           Avec la technologie safyrr djangui 2.0 la tontine n’a jamais été aussi easy 😎
           </p>
         </div>
       </section>
@@ -72,7 +71,7 @@ export default function Subscriptions() {
                 className="text-3xl font-bold mb-5"
                 style={{ color: "#333333" }}
               >
-                Abonnements disponibles
+                Safyrr djangui 2.0
               </h2>
 
               <div
@@ -83,13 +82,22 @@ export default function Subscriptions() {
               ></div>
 
               <p className="mb-4" style={{ color: "#6B7280" }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Tempor incididunt ut labore et dolore magna aliqua.
+               Voici une version courte, impactante et storytelling que tu peux utiliser 👇
               </p>
 
               <p style={{ color: "#6B7280" }}>
-                Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore.
+               “Tout commence au XVIIe siècle…”
+               Un banquier italien nommé Lorenzo Tonti imagine un système simple :
+               un groupe de personnes met de l’argent en commun…
+               Chaque année, les gains sont partagés entre les membres encore en vie.
+               Et plus le temps passe… plus les survivants gagnent.
+               Ce système traverse les siècles, évolue, et arrive en Afrique.
+               Aujourd’hui, on l’appelle autrement…
+               mais l’esprit reste le même :
+               s’unir pour avancer ensemble.
+                La tontine n’est pas qu’un système…
+                c’est une culture de solidarité.
+
               </p>
             </div>
 
@@ -113,7 +121,7 @@ export default function Subscriptions() {
 
           </div>
 
-          {/* SERVICES GRID */}
+          {/* SERVICES GRID 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
 
             {[
@@ -146,7 +154,7 @@ export default function Subscriptions() {
               </div>
             ))}
 
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -211,7 +219,7 @@ export default function Subscriptions() {
           className="text-3xl font-bold mb-3 text-center"
           style={{ color: charcoal }}
         >
-          Comment fonctionnent les paiements par abonnement
+         Comment fonctionne le paiement des cotisations
         </h2>
 
         <div

@@ -18,9 +18,9 @@ const services = [
     imageSrc: "/assets/money-transfer-M_nvfJJX.jpg",
   },
   {
-    title: "Services d’abonnement",
+    title: "Services safyrr djangui",
     description:
-      "Gérez facilement vos abonnements Canal Plus, Eneo et autres via notre plateforme.",
+      "Gérez facilement vos cotisations de tontine avec Safyrr Djangui. Cotisez en toute simplicité et recevez votre tour en toute sécurité, sans interruption.",
     href: "/subscriptions",
     imageSrc: "/assets/subscriptions-BPdFSVoI.jpg",
   },
