@@ -13,10 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Safyrr – Services Financiers en Afrique, specialiste des cartes virtuelles et transferts internationaux afin de démocratiser l'accès au dollar en Afrique centrale et aider les étudiants à gagner de l'argent et faciliter les paiements en ligne.",
+  title: "Safyrr – Services Financiers en Afrique",
   description:
     "Safyrr est une fintech qui démocratise les services financiers en Afrique centrale. Cartes virtuelles sécurisées, transferts internationaux et accès au dollar pour les particuliers et entreprises.",
   keywords: ["fintech", "Afrique", "carte virtuelle", "transfert d'argent", "Cameroun", "Safyrr"],
+  icons: {
+    icon: "/Image/logo2.png",
+    shortcut: "/Image/logo2.png",
+    apple: "/Image/logo2.png",
+  },                         // ← une seule fermeture ici, pas deux
   openGraph: {
     title: "Safyrr – Services Financiers en Afrique",
     description:
@@ -35,9 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>

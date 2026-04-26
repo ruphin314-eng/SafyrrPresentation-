@@ -13,6 +13,7 @@ export default function GetStarted() {
   useEffect(() => {
     const ua = navigator.userAgent.toLowerCase();
     if (ua.includes("android")) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLabel("Télécharger sur Play Store");
     } else {
       setLabel("Ouvrir l'application web");
