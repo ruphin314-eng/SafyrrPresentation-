@@ -110,7 +110,7 @@ export default function Subscriptions() {
               ></div>
 
               <Image
-                src="/assets/subscriptions-BPdFSVoI.jpg"
+                src="/assets/subscription.jpg"
                 alt="Subscriptions"
                 width={600}
                 height={400}

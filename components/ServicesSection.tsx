@@ -22,7 +22,7 @@ const services = [
     description:
       "Gérez facilement vos cotisations de tontine avec Safyrr Djangui. Cotisez en toute simplicité et recevez votre tour en toute sécurité, sans interruption.",
     href: "/subscriptions",
-    imageSrc: "/assets/subscriptions-BPdFSVoI.jpg",
+    imageSrc: "/assets/subscription.jpg",
   },
 ];
 

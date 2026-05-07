@@ -171,7 +171,7 @@ const ServiceSafyrr = () => {
               />
               <div className="relative overflow-hidden rounded-2xl shadow-lg">
                 <Image
-                  src="/assets/subscriptions-BPdFSVoI.jpg"
+                  src="/assets/subscription.jpg"
                   alt="Services d’abonnement"
                   width={600}
                   height={300}
