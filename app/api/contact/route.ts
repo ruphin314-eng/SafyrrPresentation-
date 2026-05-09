@@ -19,10 +19,13 @@ export async function POST(req: NextRequest) {
       port: Number(process.env.SMTP_PORT), // 465
       secure: true,                        // SSL sur port 465
       auth: {
-        user: process.env.SMTP_USER,       // contact@safyrr.tech
+        user: process.env.SMTP_USER,       
         pass: process.env.SMTP_PASS,       // mot de passe boîte mail
       },
     });
+
+    console.log('SMTP_USER utilisé :', process.env.SMTP_USER);
+    console.log('SMTP_PASS chargé :', process.env.SMTP_PASS ? 'OUI' : 'NON ou vide');
 
     // Email reçu dans ta boîte
     await transporter.sendMail({

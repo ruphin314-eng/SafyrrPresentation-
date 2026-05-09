@@ -124,7 +124,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-semibold text-gray-900 text-sm mb-1">Email</h4>
                     <p className="text-sm text-gray-600">
-                      <a href="mailto:contact@safyrr.tech" className="hover:underline">contact@safyrr.com</a>
+                      <a href="mailto:technique.safyrr@safyrr.tech" className="hover:underline">contact@safyrr.com</a>
                     </p>
                     <p className="text-sm text-gray-600">
                       <a href="mailto:support@safyrr.com" className="hover:underline">support@safyrr.com</a>

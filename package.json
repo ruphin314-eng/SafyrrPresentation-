@@ -23,7 +23,7 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.13.0",
     "redux-persist": "^6.0.0",
-    "resend": "^6.10.0",
+    "resend": "^6.12.3",
     "yarn": "^1.22.22"
   },
   "devDependencies": {
