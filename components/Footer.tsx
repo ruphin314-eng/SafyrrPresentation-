@@ -14,7 +14,7 @@ import {
 export default function Footer() {
   const socialLinks = [
     {
-      href: "https://facebook.com/safyrr",
+      href: "https://www.facebook.com/profile.php?id=61589799955922",
       label: "Facebook",
       icon: <FaFacebookF size={18} />,
     },
@@ -29,7 +29,7 @@ export default function Footer() {
       icon: <FaTwitter size={18} />,
     },
     {
-      href: "https://www.linkedin.com/in/leonel-isaac-kewang-87bb9336b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      href: "https://www.linkedin.com/company/safyrr/",
       label: "LinkedIn",
       icon: <FaLinkedinIn size={18} />,
     },
