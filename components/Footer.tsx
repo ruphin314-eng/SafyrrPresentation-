@@ -18,16 +18,16 @@ export default function Footer() {
       label: "Facebook",
       icon: <FaFacebookF size={18} />,
     },
-    {
-      href: "https://www.instagram.com/safyrr237?igsh=M2M2eTg5ajkxY2Rn&utm_source=qr",
-      label: "Instagram",
-      icon: <FaInstagram size={18} />,
-    },
-    {
-      href: "https://twitter.com/safyrr",
-      label: "Twitter",
-      icon: <FaTwitter size={18} />,
-    },
+    // {
+    //   href: "https://www.instagram.com/safyrr237?igsh=M2M2eTg5ajkxY2Rn&utm_source=qr",
+    //   label: "Instagram",
+    //   icon: <FaInstagram size={18} />,
+    // },
+    // {
+    //   href: "https://twitter.com/safyrr",
+    //   label: "Twitter",
+    //   icon: <FaTwitter size={18} />,
+    // },
     {
       href: "https://www.linkedin.com/company/safyrr/",
       label: "LinkedIn",
