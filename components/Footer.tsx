@@ -122,7 +122,7 @@ export default function Footer() {
             </div>
 
             <div className="text-sm text-white/60 space-y-1 text-center md:text-left">
-              <p>📧 <a href="mailto:contact@safyrr.tech" className="hover:underline">
+              <p>📧 <a href="mailto:support@safyrr.tech" className="hover:underline">
                      contact@safyrr.tech
                      </a>
               </p>
