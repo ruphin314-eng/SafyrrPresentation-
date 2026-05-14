@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
 
     // Configuration SMTP Hostinger
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,       // smtp.hostinger.com
+      host: process.env.SMTP_HOST,       // ssmtp.zoho.eu
       port: Number(process.env.SMTP_PORT), // 465
       secure: true,                        // SSL sur port 465
       auth: {
@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
     // Email reçu dans ta boîte
     await transporter.sendMail({
       from: `"SAFYRR Contact" <${process.env.SMTP_USER}>`,
-      to: process.env.SMTP_USER, // ta boîte qui reçoit
+      to: 'contact@safyrr.tech', // ta boîte qui reçoit
       replyTo: email,            // répondre directement au client
       subject: subject ? `[SAFYRR] ${subject}` : `[SAFYRR] Nouveau message de ${name}`,
       html: `
