@@ -152,7 +152,7 @@ export default function ContactSection() {
                   <span className="text-lg">✅</span>
                   <div>
                     <p className="font-semibold">Message envoyé avec succès !</p>
-                    <p>Nous vous répondrons dans les plus brefs délais.</p>
+                    <p>Nous vous répondrons dans les plus brefs délais. Merci!</p>
                   </div>
                 </div>
               )}
