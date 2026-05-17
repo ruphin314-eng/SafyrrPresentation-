@@ -339,26 +339,23 @@ export default function PolitiqueConfidentialite() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-const handleDownload = async () => {
-  setDownloading(true);
-  
-  const element = document.getElementById("pdf-content");
-  
-  const canvas = await html2canvas(element!, {
-    scale: 2,
-    useCORS: true,
+const handleDownload = () => {
+  // Force toutes les sections à être visibles avant impression
+  const sections = document.querySelectorAll(".transition-all");
+  sections.forEach((el) => {
+    (el as HTMLElement).style.opacity = "1";
+    (el as HTMLElement).style.transform = "none";
   });
 
-  const imgData = canvas.toDataURL("image/jpeg", 0.98);
-  const pdf = new jsPDF("p", "mm", "a4");
-  
-  const pdfWidth = pdf.internal.pageSize.getWidth();
-  const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-  
-  pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight);
-  pdf.save("Politique_de_confidentialite_Safyrr.pdf");
-  
-  setDownloading(false);
+  window.print();
+
+  // Remet les styles après impression
+  setTimeout(() => {
+    sections.forEach((el) => {
+      (el as HTMLElement).style.opacity = "";
+      (el as HTMLElement).style.transform = "";
+    });
+  }, 1000);
 };
 
   const scrollTo = (id: string) => {
