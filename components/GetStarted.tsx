@@ -47,7 +47,7 @@ export default function GetStarted() {
         </p>
         <button
           onClick={handleDownload}
-          className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900 font-bold rounded-xl shadow-lg hover:opacity-90 transition-all text-lg"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-yellow-400 to-yellow-300 text-gray-900 font-bold rounded-xl shadow-lg hover:opacity-90 transition-all text-lg"
         >
           {label}
           <svg

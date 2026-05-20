@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import AboutPage from "./AboutPage";
 import Footer from "@/components/Footer";
 import Valeur from "./Valeur";
+import GetStarted from "@/components/GetStarted";
 
 export default function About() {
   return (
@@ -12,6 +13,7 @@ export default function About() {
      <Navbar/>
      <AboutPage/>
      <Valeur/>
+     <GetStarted/>
      <Footer/>
     </>
   );
